@@ -1,0 +1,8 @@
+# Ignore datasets and model files
+*.pkl
+*.npy
+*.csv
+*.zip
+*.tar.gz
+data/
+results/models/

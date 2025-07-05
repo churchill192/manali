@@ -1,0 +1,33 @@
+# Cardiovascular AI Research Project - Requirements
+# Exact packages used in the working implementation
+
+# Core ML and Data Science
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+scipy>=1.10.0
+
+# Deep Learning Framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# NLP and Transformers
+transformers>=4.30.0
+tokenizers>=0.13.0
+
+# ECG Data Processing (PTB-XL Dataset)
+wfdb>=4.1.0
+
+# Optimization (GPU acceleration for WPSA)
+xgboost>=1.7.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Utilities
+tqdm>=4.65.0
+joblib>=1.3.0
+
+# Standard libraries (usually included with Python)
+# os, sys, ast, random, copy, warnings - built-in modules

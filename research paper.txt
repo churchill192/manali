@@ -1,0 +1,594 @@
+SLAS Technology 32 (2025) 100286
+
+
+
+
+
+
+
+
+
+
+AI driven cardiovascular risk prediction using NLP and Large Language Models for personalized medicine in athletes
+Ang Li a, Yunxin Wang b,*, Hongxu Chen c
+a Graduate School of Arts and Science, Dongshin University, Naju, 58245, South Korea
+b Department of Basic Teaching and Research, Jilin Sport University, Changchun, Jilin, 130022, China
+c School of Physical Education, Zhengzhou University of Science and Technology, Zhengzhou, Henan, 450064, China
+
+
+ 
+A R T I C L E I N F O 
+
+ 
+Keywords:
+Natural Language Processing (NLP) Large Language Models (LLMs) Biomedical Text Mining Arrhythmia Detection
+Hypertrophic Cardiomyopathy in Athletes Personalized Medicine
+Artificial Intelligence in Healthcare
+ 
+A B S T R A C T 
+
+The performance and long-term health of athletes are significantly influenced by their cardiovascular resilience and associated risk factors. This study explores the innovative applications of Natural Language Processing (NLP) and Large Language Models (LLMs) in biomedical diagnostics, particularly for AI-driven arrhythmia detection, hypertrophic cardiomyopathy (HCM) in athletes, and personalized medicine. The complexity of analysing diverse biomedical datasets, such as electrocardiograms (ECG), clinical records, genetic screening reports, and imaging results, poses challenges in obtaining precise early diagnoses. To address these issues, we introduce a hybrid machine learning (ML) framework that integrates the Wolf Pack Search Algorithm Dynamic Random Forest (WPSA-DRF) with a RoBERTa-based LLM to enhance the accuracy of cardiovascular disease predictions. Using advanced NLP techniques, including biomedical text mining, entity recognition, and feature extraction, the system processes structured and unstructured clinical data to detect abnormalities associated with sudden car- diac arrest (SCA), arrhythmias, and genetic cardiomyopathies. The proposed system achieves a diagnostic ac- curacy of 92.5 %, precision of 92.7 %, recall of 99.23 %, and F1-score of 95.6 %, outperforming traditional diagnostic methodologies. Furthermore, the research underscores the role of LLMs in personalized medicine, identifying patient-specific risk factors and optimizing treatment pathways for cardiac patients. This work highlights how NLP-driven AI solutions are transforming biomedical research, accelerating early disease detection, and improving clinical decision-making for both athletes and the general population.
+ 
+
+ 
+
+ 
+1.	Introduction
+
+The combination of Artificial Intelligence (AI) with Natural Lan- guage Processing (NLP) has revolutionized biomedical research along with diagnostic techniques and personalized medical approaches in the life sciences field. Large Language Models (LLMs) demonstrate their ability to extract important insights from difficult biomedical data consisting of electrocardiogram (ECG) reports along with genetic screenings and clinical narratives [1]. The implementation of AI-powered NLP solutions serves cardiovascular disease diagnostics through arrhythmia and Hypertrophic Cardiomyopathy (HCM) detec- tion in athletes, which prevents severe medical events like sudden car- diac arrest (SCA) [2].
+Current Challenges in Cardiovascular Diagnostics: Arrhythmia and HCM identification through traditional ECG readings and imaging re- ports plus genetic markers requires manual evaluation which both takes
+ 
+considerable time and exposed to human errors [3]. Healthcare orga- nizations struggle to analyse disease risk through automated processes because EHRs contain a massive share of unorganized clinical infor- mation. The present demand requires an efficient AI-driven system to extract biomedical text for real-time processing and analysis because it enables early disease detection and personalized medical interventions along with decision support systems [4].
+Multiple studies use machine learning (ML) along with NLP tech- niques to analyze biomedical texts and perform cardiovascular diag- nostic analysis. The disease markers within clinical text can be extracted by LLMs including RoBERTa and BioBERT according to research find- ings that facilitate predictive modeling for cardiovascular diseases [5]. DRF combined with WPSA and other advanced ML models serve to enhance cardiac abnormality classification [6]. AI-driven diagnostic methods improve workflow efficiency through enhanced personal treatment design while promoting more accurate clinical assessments
+ 
+
+ 
+* Corresponding author.
+E-mail addresses: liang95965@Gmail.com (A. Li), 18737012812@163.com (Y. Wang).
+
+https://doi.org/10.1016/j.slast.2025.100286
+Received 31 January 2025; Received in revised form 19 March 2025; Accepted 9 April 2025
+Available online 10 April 2025
+2472-6303/© 2025 The Authors. Published by Elsevier Inc. on behalf of Society for Laboratory Automation and Screening. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+ 
+
+ 
+[7].
+The presented study extends past achievements through its deploy- ment of a mixed model which combines NLP with ML to predict car- diovascular diseases and tailor risk evaluations for specific patients. Real-time clinical decision-making alongside optimized early disease detection and enhanced predictive accuracy becomes possible through NLP-powered feature extraction in the proposed system [8].
+This system aims to:
+
+○	Automate biomedical text mining for extracting cardiovascular risk factors from ECG reports, genetic data, and clinical records.
+○	The application uses NLP-optimized ML models to boost the accuracy of diagnosing arrhythmia and HCM.
+○	The system combines capabilities to find individual risks in patients while it optimizes treatment approaches.
+
+Significant Findings:
+
+•	NLP-driven ECG & clinical text analysis, the system extracts critical patterns from medical reports to detect early signs of arrhythmias and cardiomyopathy.
+•	The RoBERTa + WPSA-DRF hybrid ML model delivers better disease prediction results by improving text features extraction and cardio-
+vascular risk scoring process.
+•	The system enhances customized medical care through patient-based information analysis which creates optimized treatment paths
+together with minimized misdiagnosis risks to improve medical choices.
+
+This research creates a link between biological text extraction tech- niques and medical applications using AI-powered NLP tools which shows how LLMs and NLP methods transform modern life science operations.
+
+2.	Literature review
+
+Natural Language Processing (NLP) together with Large Language Models (LLMs) now receive notable scrutiny for their role in early car- diovascular disease (CVD) diagnosis in biomedical diagnostics. Scienti- fic researchers study AI-based techniques which involve biomedical text mining together with deep learning models and hybrid machine learning frameworks to retrieve and analyze clinical information. The paper ex- amines fundamental breakthroughs in NLP and LLMs alongside advanced ML techniques for arrhythmia recognition combined with HCM diagnosis as well as personalized medical applications [9].
+
+2.1.	NLP in biomedical text mining
+
+The medical industry currently makes extensive use of NLP tech- niques for processing unstructured medical data within clinical texts and ECG reports and healthcare documentation. Medical text analysis through traditional extraction rules and statistical NLP models began showing improvements when BioBERT and GPT and RoBERTa transformer-based LLMs became available [10]. The models extract disease markers together with risk factors and cardiovascular condition classifications from text sources which speeds up accurate disease pre- diction methods [11].
+The combination of LLMs and AI-driven entity recognition tech- niques in biomedical text mining allows for better detection of bio- markers related to diseases which exists in scientific literature and both electronic health records (EHRs) and imaging reports. The methods enable improved diagnosis by both automating cardiovascular assess- ments and decision support for treatment decisions [12].
+ 
+2.2.	LLMs for cardiovascular disease detection
+
+Medical literature processing together with patient records assess- ment has significantly advanced through the implementation of LLM technologies. Biomedical LLMs developed for pre-trained applications demonstrate an ability to evaluate ECG reports and genetic screening results and forecast cardiovascular hazard probabilities according to recent research [13]. This aspect outperforms traditional NLP models together with the following features:
+
+1.	Higher contextual understanding of medical terminology.
+2.	Improved feature extraction for disease classification.
+3.	Automated entity recognition for key symptoms and patient history insights.
+
+For example, RoBERTa-based LLMs have been successfully applied to identify arrhythmia patterns and detect early signs of hypertrophic cardiomyopathy (HCM) from clinical texts [14]. These advancements underscore the potential of LLMs in real-time, AI-assisted cardiovascular diagnostics [15].
+
+2.3.	Machine learning models in cardiac risk assessment
+
+Machine learning models function as essential tools that improve the process of diagnosing cardiovascular diseases and assessing patient risk. The ECG classification of patients depends on three widely used tradi- tional methods including Random Forest (RF) and Support Vector Ma- chines (SVM) and Gradient Boosting. These current techniques lead to both numerous inaccurate positive interpretations and diminished ca- pacity to generalize findings [16].
+DRF alongside WPSA represents new combined approaches in ML that enhance interpretation capabilities while boosting diagnostic ac- curacy performance in cardiological investigations [17]. ML-based ECG feature extraction together with NLP text analysis systems create advanced decision-making tools for cardiologists and healthcare pro- viders according to [18].
+
+2.4.	The role of AI in personalized medicine
+
+Personalized medicine aims to tailor treatment strategies based on an individual’s genetic, clinical, and lifestyle data. AI-driven models have enabled precision diagnostics by analyzing patient-specific risk factors [19]. The integration of NLP, LLMs, and ML in personalized medicine facilitates:
+
+•	Early detection of cardiovascular risks based on genetic markers.
+•	Predictive modeling for individualized treatment plans.
+•	Real-time monitoring of patient health status using AI-driven analytics.
+
+By leveraging biomedical text mining and ML-based classification, AI enhances patient-specific disease detection, ensuring that treatment strategies are optimized for long-term health outcomes [20].
+
+2.5.	Research gaps
+
+Multiple obstacles persist in using AI to diagnose cardiovascular conditions even after notable advancements according to research [21]:
+
+•	The scarcity of properly labelled biomedical datasets restricts training of LLMs for medical applications.
+•	The need exists for explainable artificial intelligence models to build trust along with transparency during clinical decision processes.
+•	Multi-modal analysis of genetic and imaging and wearable device information provides better opportunities for complete diagnostic assessments.
+ 
+
+ 
+Future researchers should dedicate themselves to creating explain- able AI architectures as well as strengthening real-time clinical advice systems along with developing better methods to fuse multi-dimensional healthcare information for superior cardiac danger assessment and medical management [22]. Cloud-based learning models with federated techniques allow secure data analysis of divided medical records by keeping sensitive patient information private [23]. Healthcare pro- fessionals can enhance AI-driven cardiovascular diagnostics robustness through synthetic data augmentation which solves dataset challenges in clinical settings [24].
+
+3.	Methodology
+
+This section describes the proposed AI-driven NLP framework for cardiovascular disease prediction, specifically arrhythmia detection, Hypertrophic Cardiomyopathy (HCM) classification, and personalized medicine applications. The methodology integrates biomedical text mining, LLM-based feature extraction, and hybrid Machine Learning (ML) models to enhance predictive accuracy in cardiovascular di- agnostics. Fig. 1 depicts the overall flow
+
+
+3.1.	Dataset
+
+This research utilized Cardiovascular Health and Risk Prediction Dataset to identify arrhythmia together with hypertrophic cardiomy- opathy (HCM) and other cardiovascular risks in athletes. The dataset consists of:
+
+•	Electrocardiogram (ECG) reports capturing electrical activity of the heart for arrhythmia classification.
+ 
+•	Genetic screening records help doctors identify hereditary risks that pertain to HCM as well as other cardiovascular conditions.
+•	Electronic Health Records (EHRs) contain both structured and un- structured medical content which includes patient records together with clinical notes alongside past diagnosis reports.
+•	The medical reports of echocardiography and MRI scans contribute to cardiac risk assessment for patients.
+•	Follow-up cardiovascular examination results of athletes must incorporate heart rate variability analyses with stress test outcomes and exams of exercise-evoked electrocardiograms which aim to
+detect irregular patterns.
+
+The major purpose of this dataset is to help AI systems create pre- dictions about cardiovascular risks in athletes which enables physicians to spot dangerous conditions such as sudden cardiac arrest during high- intensity athletic activities.
+
+3.2.	Data pre-processing using natural language processing (NLP)
+
+Pre-processing of electronic health records (EHRs), ECG reports, and clinical notes is conducted using advanced NLP techniques to extract relevant cardiovascular risk markers.
+Tokenization:
+
+1.	Basic tokenization divides text into phrases or symbols for structured analysis.
+2.	Advanced tokenization uses biomedical-specific techniques to enhance text segmentation for improved model performance.
+3.	Tokenization helps LLMs analyze clinical narratives, breaking down complex medical text into meaningful units for disease risk assessment.
+ 
+
+ 
+
+Fig. 1. Flow of the ai-driven cardiovascular disease prediction model.
+ 
+
+ 
+Stop Word Removal:
+
+○	Eliminates frequently occurring, non-informative words (e.g., “the,” “is,” “at”) to improve NLP model efficiency.
+○	Biomedical text requires domain-specific stop-word filtering to retain critical medical terms related to arrhythmia, ECG abnormal- ities, and genetic markers.
+○	The cleaned text is further processed for entity recognition and dis- ease classification using ML-based feature extraction.
+
+This NLP-based pre-processing pipeline enables high-precision feature extraction from structured and unstructured cardiovascular health data, ensuring accurate disease prediction and risk assessment in athletes. NLP-driven cardiovascular risk evaluation relies on good quality input text, with ambiguity or inconsistency affecting reliability. The process makes use of advanced text pre-processing, such as synonym resolution and medical entity detection, for ensuring accuracy. Conflict resolution strategies, both rule-based and ML-based, check against discrepant patient data. Support with clinical knowledge bases and context-aware embedding contributes towards better data interpretation.
+
+
+3.3.	Feature extraction using Large Language Model (LLM) built on the robustly optimized BERT pre-training approach (RoBERTa)
+
+The present research employs a RoBERTa-based Large Language
+ 
+Model (LLM) for biomedical text mining and cardiovascular risk pre- diction in athletes. RoBERTa, a transformer-based NLP model, opti- mized for sequence labelling tasks, making it effective for extracting key
+cardiovascular biomarkers from clinical reports, ECG data, and genetic records. The document U = [u1, … un]is represented as a sequence of symbols Y = y1, … yn , with n > m. Then, the key term appraiser aims to predict X = [x, … xn]from Y. In the standard RoBERTa appli- cation, the [cls] symbol is presumed to be in Y and referred to asy0. The overall architecture of LLM built on RoBERTa method
+The system consists of three primary components:
+
+1.	RoBERTa for Biomedical Text Processing: Encodes input medical text into vectorized representations, enabling structured analysis of un- structured EHRs and cardiovascular data.
+2.	Key Term Appraiser: Identifies critical cardiovascular markers, such as arrhythmia types, hypertrophic cardiomyopathy (HCM) in- dicators, and heart rate variability terms in athlete health records.
+3.	Decision Mechanism: Utilizes extracted features to predict cardio- vascular risks and classify disease markers, which are later used for machine learning-based disease classification.See Fig. 2.
+
+For every single yi ϵ Y, an array form gj is acquired as represented in Eq. (1).
+gj = RoBERTa(y1; Y) ∈ RF	(1)
+Wherein, F represents its embedded area. RoBERTa is encoder-based, as
+ 
+
+ 
+
+Fig. 2. Architecture of RoBERTa method.
+ 
+
+ 
+it is built on BERT. As a result, an additional key term appraiser is
+necessary to use RoBERTa completely. This work uses a projection into linear form with softmax as the key term appraiser d(⋅), to determine the
+ 
+The final key term prognosis is then made from oj using an ordinary procedure as shown in Eq. (4).
+ 
+ʹ	)	{	key term if oE ≥ oE
+ 
+d(gj) = softmax(gjU + A)	(2)
+Y ∈ RF×D, B ∈ Rn×D are adaptable factors, and D represents the
+ 
+
+ 
+non — key term otherwise
+So, xj is established by using Eq. (5).
+x = e(y ; Y ) = Q(RoBERTa(y : Y))	(5)
+ 
+non-key term values; hence D is two in this work. This means that there are two nodes in the softmax of d(⋅).
+Thus, d gj in Eq. (2) yields oj = oS oS , an array containing two possibilities. The chance of yj becoming a key term, oE represents the
+probability of yj not becoming a key term. As a result, oE = 1 — oE . It is denoted in Eq. (3).
+oj = d(gj) = d(RoBERTa(yj : Y)	(3)
+
+
+Algorithm 1
+WPSA-DRF in enhancing athletic resilience and recovery.
+
+ 
+Step 1 : Initialize Dynamic Random Forest (DRF)
+Function Initialize DRF() :
+Initialize a dynamic random forest model
+Set parameters such as number of trees, depth, and split criteria Enable dynamic adaptation to incoming clinical data
+Step 2 : Initialize WPSA
+Function Initialize WPSA() :
+Initialize a population of N wolves
+Define search space boundaries for DRF hyperparameters (e.g., num trees, max depth) Assign WPSA parameters (alpha, beta, omega wolves, search strategy)
+Step 3 : Evaluate Fitness (Objective Function)
+Function Evaluate Fitness wolf position :
+Extract DRF hyperparameters from the wolf position
+num trees = wolf position[0 # Number of trees in DRF
+max depth = wolf position[1 # Maximum depth of decision trees trained forest = Train DRF(num trees, max depth
+accuracy = Evaluate DRF trained forest
+return accuracy Higher accuracy means better fitness
+Step 4 : Update Wolf Positions (WPSA Update Rules)
+Function Update Wolf Position(wolf, alpha wolf, beta wolf, omega wolf) :
+Use WPSA update equations to refine the wolfʹs position
+Wolves move towards alpha (best), beta (second best), and omega (worst) solutions new position = Calculate New Position(wolf, alpha wolf, beta wolf, omega wolf return newposition
+Step 5 : Convergence criteria
+Function Convergence Criteria Met() :
+Check if fitness improvement is below a defined threshold If fitness change < threshold :
+return True # Stop optimization
+else :
+return False
+Step 6 : Train Dynamic Random Forest (DRF) with Optimized Parameters
+Function Train DRF(num trees, max depth) :
+Extract features from NLP — processed biomedical text
+encoded features = Extract Features(RoBERTa text embeddings Initialize DRF model with optimized parameters
+drf model = Dynamic Random Forest(num trees, max depth drf model.train encoded features, cardiovascular labels
+return drfmodel
+Step 7 : Integration of WPSA — DRF
+Main loop for WPSA — DRF integration
+ 
+Eq. (2) optimizes the parameters U and A of the keyword estimator d(⋅) using the instruction database C = {(Ui, Xi )}. RoBERTa is also in sync with C.
+
+3.4.	Classification using Wolf Pack Search Algorithm Dynamic Random Forest (WPSA-DRF)
+
+To enable efficient classification and prediction of cardiovascular risks in athletes, a hybrid Wolf Pack Search Algorithm Dynamic Random Forest (WPSA-DRF) approach is employed. The Dynamic Random Forest (DRF) method adjusts its structure dynamically by eliminating less important features while leveraging ensemble learning to construct multiple decision trees for binary and multi-class cardiovascular risk prediction.
+DRF utilizes Gini Impurity for feature importance assessment, opti- mizing model performance by prioritizing critical cardiovascular bio- markers extracted through biomedical NLP techniques (RoBERTa-based feature extraction).
+The Wolf Pack Search Algorithm (WPSA), inspired by the coopera- tive hunting strategies of wolf packs, optimizes DRF hyperparameters by iteratively refining solutions. It adjusts genetic factors dynamically, allowing efficient optimization of tree depth, number of trees, and split criteria.
+By integrating WPSA with DRF, this framework achieves:
+
+•	Improved classification accuracy for arrhythmia and hypertrophic cardiomyopathy (HCM) in athletes.
+•	Enhanced generalizability for cardiovascular risk prediction.
+•	Robust processing of biomedical NLP-extracted features from elec- tronic health records (EHRs), ECG reports, and genetic screenings.
+
+The pseudo-code for integrating WPSA with DRF for cardiovascular risk classification is shown in Algorithm 1.
+
+3.4.1.	Dynamic Random Forest (DRF)
+The Dynamic Random Forest (DRF) method is an advanced extension of the traditional Random Forest (RF) classifier, which employs boot- strapping, normalization, and ensemble learning to construct multiple decision trees. RF classifiers have demonstrated high accuracy in biomedical classification tasks, as they prevent overfitting, handle high- dimensional data efficiently, and ensure model clarity.
+In cardiovascular risk prediction, DRF is used to refine disease clas- sification by dynamically removing the least significant features while training multiple decision trees recursively. This helps in reducing model complexity and improving classification performance for arrhythmia and hypertrophic cardiomyopathy (HCM) detection in ath- letes. The Mean Squared Error (MSE) for RF-based models is given by Eq. (6):
+ 
+Function WPSA DRF Optimization () :
+Initialize WPSA ()
+Initialize DRF ()
+Output the best parameters and trained DRF model
+ 
+MSE =
+ 
+m
+
+M l=0
+ 
+( m )
+
+ 
+
+ 
+(Ej — Zj)a2	(6)
+ 
+optimal num trees = best parameters [0
+optimal max depth = best parameters [1
+optimized drf model = TrainDRF (optimal num trees, optimal max depth return optimized drf model
+ 
+Where M denotes the number of individual data facts; Zj shows the outcome reverted and the specific value is j.
+In the proposed method, DRF removes the least major traits, employs a set of tree decisions in every recursive process, and oversees the
+ 
+		outcome of the RF classifier. The DRF method is used for binary label-
+ 
+
+ 
+ling, and also builds an ensemble with the average prediction model, once developing multiple decision trees that performed well in the phase of training. The grid-based search method is employed to move all of the elevated traits of the RF. GiniImpurity is acquired using Eq. (7).
+m
+GiniImpurity =   RP(jod)(1 — RP(jod))	(7)
+l=0
+
+Where m represents the total number of classes applied in the procedure and RP signifies the possibility of picking a portion from class j data.
+In the DRF technique, many decision trees work together as a cohesive format. This approach has a lower computing expense and can generate several minimum tree decisions with fewer attributes. Several small tree decision structures are combined into only one sturdy candidate response (big tree structure) by calculating the average or collecting an important proportion of votes. The DRF method is considered the most effective teaching and learning approach.
+
+3.4.2.	Wolf Pack Search Algorithm (WPSA)
+The WPSA is a universal probabilistic finding method based on the wolf pack chasing behaviour. The wolf pack search procedure is based on the consistent activity of a wolf pack. They work effectively together and attack competitors and targets. The hunting method of wolves can be characterized as follows: First, the Gray wolf must be chosen to roam over. Gray wolves prioritize this process over other hunting activities, as they are more experienced and powerful. Second, they explore for scents in their surroundings. One of them might detect a strong stench, indi- cating the presence of quarries nearby, and third, communicate this information to other wolves through wailing. The entire wolf pack will come upon the Gray wolf with the strongest stench of the quarries and travel in the direction of the wailing. Quarries may be limited in size, causing some wolves to quit hunting, leading to poor physical health and death. Instead, some new wolves might join the wolf pack. The wolf pack members stay apprised during the hunting phase. The schematic demonstration of WPSA is illustrated in Fig. 3.
+Based on the aforementioned description of a wolf pack, chromo- some Dj is included in the wolf pack search procedure. A path formed by a collection of genetic factors h(l) in a finite design area is considered a wolf’s Chromosome. The basis of WPSA based on the Chromosome
+sequence is as follows: Establish the structure of the wolf pack. Randomly set the wolf pack’s Chromosome Dj and set the number of cycles S to 1. Determine the multiple-purpose cost role Icost Dj for every Chromosome Dj, also select Chromosome from the Gray wolves with
+lesser cost functions from the wolf pack. At random, select a genetic factor g ∗ (k) from the Chromosomal of each gray wolf. The nearby ge- netic factors make new Chromosomes rather than the original genome.
+Choose the best from this new Chromosome and restore the original one. The Chromosome Dj in the scheduling region is modified. Calculate the cost function Icost Dj for every Chromosome pair and select the best Chromosome Dbetter from the fresh wolf pack, which is denoted in Eq. (8).
+Dbetter = {Db ⃒⃒⃒⃒Icost (Db ) =  min  Icost Dj )}	(8)
+
+Here, N represents the number of inhabitants in a wolf pack. The wolf pack Chromosome will be approaching the best Chromosome as described in Eq. (9).
+ 
+chromosome Dbetter in the previous wolf pack. The term step refers to the chromosome’s approaching speed. The step is cleared by the humanoid
+operator. If step is one, the new genetic factor hʹ(l) is close to the point of
+the original genetic factor hj(l). The larger the step, the convergence is and the likelihood of missing the optimal value is great. Thus, the appropriate procedure can avoid the early integration issue. Organize
+the new wolf pack. Remove suboptimal hyperparameter configurations and generate refined hyperparameter sets. If S is sufficiently big, halt the flow. Else, S ← S + 1. The integration of WPSA with the DRF approach
+optimizes feature selection and hyperparameter tuning for cardiovas-
+cular disease classification. Its progressive adaptability and modification enhance recovery forecasting and training stress control. The method enhances cardiovascular diagnostic accuracy, reduces misclassification risks, and improves model generalizability for disease prediction.
+
+
+3.5.	Clinical validation and interpretation
+
+Clinicians will cross-validate the cardiovascular risk factors pro- duced by AI using predictions compared with established sports cardi- ology recommendations. Model accuracy are tested using retrospective validation with past athlete health records and prospective clinical tri- als. Physician-in-the-loop ratings will give expert validation and in- crease interpretability of AI. Explainable AI (XAI) techniques, including feature attribution and attention mapping, will increase transparency. AI-based risk insights are integrated into Electronic Health Records (EHRs) to inform real-time clinical decision-making. An easy-to-use dashboard will display risk stratification scores and reasons for clini- cians. The system will enable early detection of arrhythmias, Hyper- trophic Cardiomyopathy (HCM), and Sudden Cardiac Arrest (SCA). Ongoing feedback from sports cardiologists will improve the model’s precision and clinical relevance. The AI system will advance personal- ized medicine by recognizing athlete-specific cardiovascular risk factors. This formal method guarantees AI predictions are dependable, under- standable, and actionable in practical sports medicine.
+
+
+3.6.	Integration with diagnostic tools
+
+The proposed system is incorporated with existing diagnosis equip- ment like ECG readers and imaging software used for adding value to cardiovascular risk assessment. The system uses standardized exchange formats like Health Level Seven (HL7) and Digital Imaging and Com- munications in Medicine (DICOM), therefore being compatible with EHRs as well as clinical systems. It processes ECG signals using auto- extraction features and pattern identification to assist with arrhythmia detection. Moreover, imaging information of echocardiograms or MRI is processed using DL models to determine structural anomalies. Inte- grating these diagnostic tools, the system offers an extensive evaluation, enhancing precision and assisting clinicians with better-informed deci- sion-making.
+
+4.	Results and discussion
+
+4.1.	Dataset description
+
+The Cardiovascular Health and Risk Prediction Dataset captures
+ 
+hʹ l	h (l) +  hbetter (l) — hj (l) .step, (l = 0, 1, …, M, ; j = 1, 2, …N, step
+ 
+multiple biomedical and physiological characteristics that influence
+ 
+j ( ) = j
+∈ Y)
+ 
+⃒⃒hbetter
+ 
+(l)	— hj(l)⃒⃒
+ 
+
+
+
+(9)
+ 
+cardiovascular disease risk assessment in athletes. It comprises data related to:
+
+1.	Electrocardiogram (ECG) Reports: Capturing electrical activity of the
+ 
+In this equation, hʹ j(l) represents the newly acquired l -th genetic factor of jth Chromosome, hj(l) represents the previous l-th genetic factor of j th chromosome, and hbetter(l) represents l -th genetic factor of the best
+ 
+heart for arrhythmia detection and hypertrophic cardiomyopathy (HCM) screening.
+2.	Genetic Screening Records: Identifying hereditary risk factors asso- ciated with cardiovascular abnormalities.
+ 
+
+ 
+
+Fig. 3. Schematic representation of Wolf Pack Search Algorithm (WPSA) for optimizing cardiovascular risk classification.
+
+ 
+3.	Electronic Health Records (EHRs): Containing structured and un- structured clinical notes, patient histories, and prior cardiovascular conditions.
+4.	Biomedical Imaging Reports: Echocardiography and MRI scans providing visual diagnostics of cardiac structural anomalies.
+5.	Athlete-Specific Cardiovascular Assessments: Including heart rate variability, stress testing results, and exercise-induced ECG anoma- lies to assess sudden cardiac arrest (SCA) risk in athletes.
+
+The dataset enables the development of Machine Learning (ML) and Deep Learning (DL) models for predicting cardiovascular disease risks. It is widely used for AI-based diagnostics, medical NLP applications, and biomedical signal processing research.
+This dataset is sourced from PhysioNet, a well-known open-access platform for biomedical research: https://physionet.org/content/ptb- xl/1.0.1/
+
+4.2.	Experimental setup
+
+The experiment is conducted on a high-performance computing system designed to handle computationally intensive AI-driven biomedical diagnostics (Table 1). The system specifications are as follows:
+•	Processor: Intel Core i7–9700 K CPU, clocked at 3.6 GHz
+•	Memory: 32 GB RAM to efficiently process large-scale ECG datasets
+•	Graphics Processing Unit (GPU): NVIDIA RTX 3080 (used for deep learning model acceleration)
+•	Development Environment: Python 3.8 with libraries including TensorFlow, PyTorch, Scikit-learn, and Hugging Face Transformers
+•	Operating System: Ubuntu 20.04 LTS (Linux-based environment for optimal AI model execution)
+
+4.3.	Performance analysis
+
+The most important performance metrics of the proposed WPSA-DRF hybrid machine learning model in cardiovascular risk prediction for athletes are analyzed. The model leverages NLP-driven biomedical text mining and machine learning to classify arrhythmia, hypertrophic car- diomyopathy (HCM), and other cardiovascular conditions with high accuracy (Table 2).
+
+•	92.5 % diagnostic accuracy, ensuring high reliability in cardiovas- cular risk classification.
+•	92.7 % precision, minimizing false positives in disease prediction.
+ 
+•	99.23 % recall (sensitivity), capturing nearly all actual cardiovas- cular risk cases.
+•	95.6 % F1-score, balancing precision and recall for optimal classification.
+•	AUC-ROC of 98.1 %, demonstrating the model’s capability to distinguish between disease and non-disease cases.
+•	2.1 % False Negative Rate (FNR), indicating a low risk of missing high-risk patients.
+
+These results indicate the model’s effectiveness in early disease detection, athlete-specific cardiovascular monitoring, and personalized treatment recommendations. Though high recall guarantees that almost all the cases of cardiovascular risk are identified, balance between sensitivity and specificity must be maintained to prevent too many false positives. The WPSA-DRF model maintains this balance by maximizing precision (92.7 %) while keeping a high AUC-ROC value at 95 %, making distinction between risk and non-risk cases efficient. This can be further tuned for thresholds and specificity to make the model more usable in practice-based diagnostics. The performance metrics are pre- sented in Table 2 and Figs. 4 and 5.
+The Receiver Operating Characteristics (ROC) curve evaluates the model’s ability to distinguish between cardiovascular disease cases (positive) and non-disease cases (negative) at different classification thresholds.
+
+•	True Positive Rate (TPR) (y-axis): Measures the proportion of correctly identified cardiovascular risk cases.
+•	False Positive Rate (FPR) (x-axis): Measures the proportion of non- risk cases incorrectly classified as high-risk.
+•	AUC (Area Under the Curve) score = 95 % (0.95): Confirms that the model performs exceptionally well in distinguishing between healthy and at-risk individuals.
+
+An  AUC  of  95  %  (0.95)  indicates  excellent  classification
+
+Table 1
+Experimental setup.
+
+ 
+Component	Specification
+
+ 
+Processor	Intel Core i7–9700 K (3.6 GHz)
+RAM	32 GB
+GPU	NVIDIA RTX 3080
+Operating System	Ubuntu 20.04 LTS Programming Language	Python 3.8 Platform	Windows 7
+Frameworks	TensorFlow, PyTorch, Scikit-learn, Hugging Face NLP
+
+ 
+ 
+
+ 
+performance, meaning that the model accurately predicts cardiovascu- lar risk conditions in athletes with high reliability. This ensures early detection of conditions such as arrhythmia and hypertrophic cardio- myopathy (HCM), leading to better preventive care and treatment planning.
+Specific indicators of performance are employed to offer a full assessment of the proposed prototype. The definitions for each param- eter are as follows:
+
+•	Accuracy: The accuracy metric is needed to assess the general effi- ciency of the model. It is computed using Eq. (10).
+Accuracy =	True Positive + True Negative
+True Positive + True Negative +False Positive +False Negative
+(10)
+
+
+•	Precision: In ML, precision is measured as the fraction of true pos- itive forecasting, demonstrating the capability of the prototype to neglect False Positives. The formulation is computed with Eq. (11):
+ 
+precision of 95.2 % exceeding previous models for cardiovascular risk prediction tasks. WPSA-DRF reaches 95.0 % accuracy and 95.2 % pre- cision which exceeds RNN (90 %) GBM (87 %) and RF (88 %) and LR (90
+%) leading to its recognition as the best model for identifying positive cases. WPSA-DRF proves effective for determining cardiovascular dis- ease risks in athletes precisely because it achieves better classification reliability than standard algorithms. These performance metrics indicate better possibility for early detection of arrhythmia alongside hypertro- phic cardiomyopathy (HCM) which enables personalized treatment strategies. The detailed comparison appears in Table 3 and Fig. 6.
+The WPSA-DRF model achieves a recall rate of 99.23 % which ex- ceeds all other models and their respective recall rates including LR (99.16 %), RNN (89 %), GBM (86 %) and RF (87 %). The F1-score (95.6
+%) provides superior classification performance compared to all other models which include LR (94.47 %), RNN (90 %), GBM (87 %) as well as RF (88 %). WPSA-DRF stands as the optimal predictive model because it maximizes precision-recall trade-offs which leads to both sensitive and precise outcome predictions. Table 4 and Fig. 7 demonstrate that WPSA- DRF proves effective for AI-based cardiovascular risk prediction which supports its clinical use for early condition diagnosis of arrhythmia and
+ 
+Precision =	True Positive
+True Positive + False Positive
+ 
+(11)
+ 
+hypertrophic cardiomyopathy in athletes.
+
+5.	Discussion
+ 
+•	Recall: Recall emphasizes the capacity of the model to exactly recognize optimistic instances. It is estimated via Eq. (12):
+ 
+
+This research aims to boost athlete healthcare through heart disease assessment combined with artificial intelligence models of machine
+ 
+Recall =	True Positive
+True Positive + False Negative
+ 
+(12)
+ 
+learning and natural language processing (NLP) systems. The WPSA- DRF model combines Large Language Models (LLMs) with NLP-based features for better detection of arrhythmias and hypertrophic cardio- myopathy (HCM) through improved accuracy. RNN [21] along with
+ 
+•	F1- Score: The F1- score is a harmonic mean of precision and recall.
+It is specifically beneficial in circumstances where both measures are significant and a compromise is desired. The formula is given by Eq. (13).
+F1 — Score = 2 × Precision × Recall	(13)
+Precision + Recall
+
+
+
+These metrics validate the efficacy of WPSA-DRF in cardiovascular diagnostics, supporting AI-driven precision medicine for athletes.
+The proposed WPSA-DRF model (AUC = 95 %) is benchmarked
+against:
+
+•	Recurrent Neural Network (RNN) [21]
+•	Gradient Boosting Machine (GBM) [21]
+•	Random Forest (RF) [21]
+•	Logistic Regression (LR) [22]
+
+These comparisons demonstrate that WPSA-DRF outperforms exist- ing models in terms of accuracy, precision, recall, and F1-score, making it a highly reliable solution for AI-driven cardiovascular health moni- toring in athletes.
+The WPSA-DRF model delivers the best accuracy score of 95.0 % and
+
+
+Table 2
+Evaluation of key performance indicators in cardiovascular risk prediction.
+
+Performance Metrics	Values ( %)
+Diagnostic Accuracy	92.5
+Precision	92.7
+Recall (Sensitivity)	99.23
+F1-Score	95.6
+AUC-ROC Score	95
+False Negative Rate (FNR)	2.1
+ 
+other methods currently fail to properly track cardiovascular trends because they have temporal dependency limitations. The GBM [21] models demonstrate both overfitting problems and high computational expenses during complex biomedical dataset assessments. RF [21] demonstrates excellence in classification when applied to robust systems but these methods have poor explanatory capabilities which hinders the process of attribute and risk factor analysis. The application of LR [22] requires massive amounts of manual work in engineering features because it fails to understand non-linear interactions present in physi- ological and genetic data.
+The WPSA-DRF model implements ensemble learning with an optimization-based search system which produces highly accurate classifying of cardiovascular risks. WPSA-DRF benefits from engineered text digitization through NLP-based biomedical mining system which enables it to track disease indicators across ECG records and medical documentation alongside genetic reports. WPSA-DRF proves superior to existing models because its evaluation data reveals greater accuracy and recall and F1-score according to Table 4 and Fig. 7. The AI system powers early disease identification along with risk assessment abilities which lead to precise medical treatment for athletes thereby advancing clinical decision support while enhancing active healthcare tracking.
+
+6.	Conclusion
+
+The proposed WPSA-DRF model uses NLP together with LLM capa- bilities to improve AI systems which perform athlete cardiovascular risk assessments. Healthcare professionals use biomedical text mining com- bined with structured clinical records together with machine learning algorithms within their system to find arrhythmia while also detecting hypertrophic cardiomyopathy along with cardiovascular malfunctions which leads to early diagnosis and individualized treatment options. The processing strategy includes NLP pre-processing technicalities which perform tokenization couple with stop-word elimination to clean up textual medical data. The WPSA algorithm working with RoBERTa- based LLM selects vital clinical components which leads to enhanced model accuracy. The WPSA-DRF ensemble learning framework produces
+ 
+
+ 
+Fig. 4. Performance metrics result for cardiovascular risk prediction metrics.
+
+Fig. 6. Outcomes obtained based on accuracy and precision.
+Fig. 5. AUC-ROC curve for Ai-driven cardiovascular risk prediction.
+ 
+
+
+Table 3
+Accuracy and precision outcomes of athletic resilience.
+
+Models	Accuracy (%)	Precision (%)
+RNN [21]
+90	91
+GBM [21]
+87	88
+RF [21]
+88	89
+LR [22]
+90	90.54
+WPSA-DRF [Proposed]	95.0	95.2
+
+highly reliable cardiovascular disease predictions through an accuracy of 95.0 % together with precision of 95.2 % and recall of 99.23 % and F1-score of 95.6 %. The study proves WPSA-DRF positions better than standard machine learning approaches for delivering elevated clinical decision capabilities to both cardiologists and sports medicine special- ists. WPSA-DRF demands optimized hyperparameters through time- consuming processes since slight alterations in patient information affect model performance. The proposed system is an extension of athlete-specific cardiovascular screening to more applications, such as general population risk assessment, detection of early diseases, and
+ 
+
+Table 4
+Recall and F1-score-based outcomes.
+
+Models	Recall ( %)	F1-Score ( %)
+RNN [21]
+89	90
+GBM [21]
+86	87
+RF [21]
+87	88
+LR [22]
+99.16	94.47
+WPSA-DRF [Proposed]	99.23	95.6
+
+ongoing health monitoring. With integration of clinical datasets and diagnostic technologies, the model can detect cardiovascular abnor- malities in the general population across different demographics. This extension raises its value for preventive healthcare and mass screening programs. The WPSA-DRF diagnostic model faces a main limitation because it does not provide clear relationships between individual car- diovascular risk factors and predicted diagnoses. Future researchers must work on explaining prediction models because integrating XAI (Explainable AI) techniques enables healthcare practitioners to access transparent interpretive explanations about diagnostic predictions. The risk assessment abilities of the model can be improved through its ability
+ 
+
+ 
+
+ 
+
+Fig. 7. Outcomes of recall and F1-score values.
+
+to process multiple varieties of data including wearable device outputs combined with ECG tracking systems and biological indicators. The upcoming development will focus on model adaptation for biomedical datasets during continuous adaptation to achieve generalizability across different athlete populations.
+
+Ethical statement
+
+No Human is involved in this study.
+
+Data availability statement
+
+The dataset used in this study, PTB-XL, is publicly available on PhysioNet (https://physionet.org/content/ptb-xl/1.0.1/). The data is fully anonymized and provided under the terms of the PhysioNet data use agreement.
+
+CRediT authorship contribution statement
+
+Ang Li: Writing – original draft, Software, Resources, Project administration, Methodology, Conceptualization. Yunxin Wang: Writing – original draft, Supervision, Software, Project administration, Methodology, Formal analysis, Data curation, Conceptualization. Hon- gxu Chen: Writing – review & editing, Project administration, Investigation.
+
+Declaration of competing interest
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+
+Acknowledgements
+
+None.
+
+References
+
+[1]	Al’Aref SJ, et al. Artificial intelligence, machine learning, and cardiovascular disease. J Am Coll Cardiol 2020;75(23):2837–55. https://doi.org/10.1016/j. jacc.2020.04.081.
+ 
+[2]	Attia ZI, et al. Screening for cardiac contractile dysfunction using an artificial intelligence–enabled ECG. Nat Med 2019;25(1):70–4. https://doi.org/10.1038/ s41591-018-0240-2.
+[3]	Chen W, et al. Deep learning-based electrocardiogram analysis for the early detection of cardiovascular diseases. IEEE Trans Biomed Eng 2023;70(1):98–107. https://doi.org/10.1109/TBME.2022.3198857.
+[4]	Siontis KC, Noseworthy PA, Attia ZI, Friedman PA. Artificial intelligence-enhanced electrocardiography in cardiovascular disease management. Nat Rev Cardiol 2021; 18(7):465–78. https://doi.org/10.1038/s41569-020-00509-0.
+[5]	Dey D, Slomka PJ, Leeson P, Comaniciu D, Shrestha S. Artificial intelligence in cardiovascular imaging: current status and future perspective. Eur Heart J Cardiovasc Imaging 2019;20(7):705–17. https://doi.org/10.1093/ehjci/jez099.
+[6]	Ahmad M, Ali S, Bilal M. A hybrid machine learning framework for arrhythmia classification using ECG signals. Expert Syst Appl 2023;211:118541. https://doi. org/10.1016/j.eswa.2022.118541.
+[7]	Jiang X, Liu X, Shi X, Li J, Yang H. Deep learning-based hypertrophic cardiomyopathy risk prediction using echocardiographic and clinical data. Sci Rep 2022;12(1):12345. https://doi.org/10.1038/s41598-022-16750-1.
+[8]	Weng SF, Reps J, Kai J, Garibaldi JM, Qureshi N. Can machine-learning improve cardiovascular risk prediction using routine clinical data? PLoS One 2017;12(4): e0174944. https://doi.org/10.1371/journal.pone.0174944.
+[9]	Ghorbani A, et al. Deep learning interpretation of echocardiograms. NPJ Digit Med 2020;3(1):10. https://doi.org/10.1038/s41746-020-0224-8.
+[10]	Tison GH, Zhang J, Delling FN, Pletcher MJ. Automated analysis of electrocardiograms using a deep learning algorithm. JAMA Cardiol 2018;3(5): 425–9. https://doi.org/10.1001/jamacardio.2018.0258.
+[11]	Zhang L, Gao X, Li Y, Wang Z. Artificial intelligence in ECG diagnosis: past, present, and future. Front Cardiovasc Med 2021;8:750909. https://doi.org/10.3389/ fcvm.2021.750909.
+[12]	Chen JH, Asch SM, Patel MD. Machine learning and precision medicine in cardiovascular disease. Ann Intern Med 2020;172(9):698–705. https://doi.org/ 10.7326/M19-3005.
+[13]	Rajpurkar P, et al. Cardiologist-level arrhythmia detection and classification using deep learning. Nat Biomed Eng 2019;3(6):427–35. https://doi.org/10.1038/ s41551-019-0397-7.
+[14]	Li Y, Chen J, Gao W, Luo J. Explainable AI in cardiovascular disease prediction: a systematic review. Artif Intell Med 2022;128:102222. https://doi.org/10.1016/j. artmed.2022.102222.
+[15]	Guan T, et al. A deep learning approach for early prediction of sudden cardiac arrest in athletes using wearable ECG data. Sensors 2023;23(3):1204. https://doi. org/10.3390/s23031204.
+[16]	Skoki A, Napravnik M, Polonijo M, Sˇtajduhar I, Lerga J. Revolutionizing soccer
+injury management: predicting muscle injury recovery time using ML. Appl Sci 2023;13(10):6222. https://doi.org/10.3390/app13106222.
+[17]	Majumdar A, Bakirov R, Hodges D, Scott S, Rees T. Machine learning for understanding and predicting injuries in football. Sports Med Open 2022;8(1):73. https://doi.org/10.1186/s40798-022-00465-4.
+[18]	Zhao F. The application of sports biomechanics in sports injury prevention and rehabilitation. Front Sport Res. 2024;6(3). https://doi.org/10.25236/ FSR.2024.060320.
+[19]	Reis FJ, Alaiti RK, Vallio CS, Hespanhol L. Artificial intelligence and machine- learning approaches in sports: concepts, applications, challenges, and future perspectives. Braz J Phys Ther 2024:101083. https://doi.org/10.1016/j. bjpt.2024.101083.
+[20]	Ribeiro LMF. Machine learning methods for sports injury: athlete injury risk and injury profiling. Universidade NOVA de Lisboa (Portugal); 2024. Master’s thesis.
+[21]	Zou R. Exploring the role of artificial intelligence in sports injury prevention and rehabilitation. Scalable Comput Pract Exp. 2025;26(1):316–25. https://doi.org/ 10.12694/scpe.v26i1.3544.
+[22]	Ayala RED, et al. Novel study for the early identification of injury risks in athletes using machine learning techniques. Appl Sci 2024;14(2):570. https://doi.org/ 10.3390/app14020570.
+[23]	Zhao X, et al. Exploring the relationship between distress rumination, resilience, depression, and self-injurious behaviors among Chinese college athletes infected with COVID-19: a cross-sectional study. Front Psychiatry 2023;14:1219867. https://doi.org/10.3389/fpsyt.2023.1219867.
+[24]	Patenteu R, et al. The role of psychological resilience and aggression in injury prevention among martial arts athletes. Front Psychol 2024;15:1433835. https:// doi.org/10.3389/fpsyg.2024.1433835.
