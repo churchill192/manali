@@ -123,11 +123,6 @@ for idx, row in enumerate(tqdm(df_filtered.iterrows(), total=len(df_filtered), d
         failed_count += 1
         print(f"❌ FAILED record {idx} ({filename_lr}): {e}")
         ecg_features[idx] = np.zeros(128)
-        
-    # Force GPU cleanup every 1000 records
-    if idx % 1000 == 0:
-        torch.cuda.empty_cache() if torch.cuda.is_available() else None
-        print(f"🧹 GPU cleanup at record {idx}")
 
 print(f"🎯 500 Hz ECG processing completed! Failed: {failed_count}")
 print("🧹 Final GPU cleanup...")
